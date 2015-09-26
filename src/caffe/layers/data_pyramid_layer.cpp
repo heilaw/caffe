@@ -121,7 +121,7 @@ void DataPyramidLayer<Dtype>::InternalThreadEntry() {
     this->data_transformer_->Transform(datum, this->transformed_data_vector_);
     // Copy label.
     if (this->output_labels_) {
-      top_label[item_id] = datum.label();
+      top_label[item_id] = datum.label(0);
     }
     trans_time += timer.MicroSeconds();
     timer.Start();
