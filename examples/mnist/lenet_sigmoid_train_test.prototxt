@@ -11,7 +11,7 @@ layer {
     scale: 0.00390625
   }
   data_param {
-    source: "examples/mnist/mnist_train_lmdb"
+    source: "examples/mnist/mnist_train_sigmoid_lmdb"
     batch_size: 64
     backend: LMDB
   }
@@ -28,7 +28,7 @@ layer {
     scale: 0.00390625
   }
   data_param {
-    source: "examples/mnist/mnist_test_lmdb"
+    source: "examples/mnist/mnist_test_sigmoid_lmdb"
     batch_size: 100
     backend: LMDB
   }
@@ -158,7 +158,6 @@ layer {
   bottom: "label"
   top: "loss"
 }
-
 layer {
   name: "accuracy"
   type: "MultiLabelAccuracy"
